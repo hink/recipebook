@@ -1,5 +1,5 @@
 yaml
-----
+---
 - name: Restart Squad - Event
   hosts: squad
   tasks:
