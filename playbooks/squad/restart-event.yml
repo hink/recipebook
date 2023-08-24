@@ -1,0 +1,9 @@
+yaml
+----
+- name: Restart Squad - Event
+  hosts: squad
+  tasks:
+    - name: Restart Squad - Event
+      ansible.builtin.systemd:
+        name: squad-event
+        state: restarted
