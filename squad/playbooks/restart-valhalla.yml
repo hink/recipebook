@@ -1,0 +1,17 @@
+---
+- name: Restart Squad - Valhalla
+  hosts: squad
+  tasks:
+    - name: Restart Squad - Valhalla
+      ansible.builtin.systemd:
+        name: squad-valhalla
+        state: restarted
+
+    - name: Pause for 30 seconds
+      ansible.builtin.pause:
+        seconds: 30
+
+    - name: Restart Squad Query Cacher
+      ansible.builtin.systemd:
+        name: squad-querycacher-valhalla
+        state: restarted
